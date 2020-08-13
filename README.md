@@ -1,5 +1,7 @@
 # BigQuery Connector
 
+[![Build Status](https://travis-ci.com/modakanalytics/bigquery.almaren.svg?branch=master)](https://travis-ci.com/modakanalytics/bigquery.almaren)
+
 ```
 libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.1-2-4"
 ```
