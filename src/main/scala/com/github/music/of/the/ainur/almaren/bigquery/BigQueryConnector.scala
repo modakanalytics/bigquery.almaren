@@ -1,4 +1,4 @@
-package com.github.music.of.the.ainur.almaren.solr
+package com.github.music.of.the.ainur.almaren.bigquery
 
 import org.apache.spark.sql.{DataFrame,SaveMode}
 import com.github.music.of.the.ainur.almaren.Tree

@@ -19,6 +19,7 @@ spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almare
 
 | Parameters | Description             |
 |------------|-------------------------|
+
 #### Example
 
 

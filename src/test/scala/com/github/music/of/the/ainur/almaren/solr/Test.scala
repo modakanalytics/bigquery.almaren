@@ -1,10 +1,10 @@
-package com.github.music.of.the.ainur.almaren.solr
+package com.github.music.of.the.ainur.almaren.bigquery
 
 import org.apache.spark.sql.SaveMode
 import org.scalatest._
 import com.github.music.of.the.ainur.almaren.Almaren
 import com.github.music.of.the.ainur.almaren.builder.Core.Implicit
-import com.github.music.of.the.ainur.almaren.solr.Solr.SolrImplicit
+import com.github.music.of.the.ainur.almaren.bigquery.BigQuery.BigQueryImplicit
 
 class Test extends FunSuite with BeforeAndAfter {
 
@@ -23,29 +23,17 @@ class Test extends FunSuite with BeforeAndAfter {
   // Create twitter table with data
   val jsonData = bootstrap
 
-  // Save Twitter data to Solr
-  val twitter = almaren.builder
-    .sourceSql("select id,text from twitter")
-    .targetSolr("gettingstarted","localhost:9983",Map("commit_within" -> "1","batch_size" -> "1"),SaveMode.Overwrite).batch
 
-  // Read Data From Solr
-  val solrData = almaren.builder.sourceSolr("gettingstarted","localhost:9983").batch
-
-  // Waiting 30 seconds for Solr commit...
-  Thread.sleep(30000)
-
-  // Test count
-  val inputCount = jsonData.count()
-  val solrDataCount = solrData.count()
+  //write tests
 
   test("number of records should match") {
-    assert(inputCount == solrDataCount)
+//    assert(inputCount == bigqueryDataCount)
   }
 
   // Check if ids match
-  val diff = jsonData.as("json").join(solrData.as("solr"), $"json.id" <=> $"solr.id","leftanti").count()
+  //val diff = jsonData.as("json").join(bigqueryData.as("bigquery"), $"json.id" <=> $"bigquery.id","leftanti").count()
   test("match records") {
-    assert(diff == 0)
+ //   assert(diff == 0)
   }
 
   def bootstrap = {
