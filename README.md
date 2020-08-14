@@ -20,12 +20,12 @@ spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almare
 
 | Parameters | Description             |
 |------------|-------------------------|
-| table          | The BigQuery table in the format [[project:]dataset.]table       |
-| options    |  Description(Value)|
+| table          | The BigQuery table which is present in a dataset in the format [[project:]dataset.]table       |
+| options    |  Description  |
 |-------------| -------------|
-| parentProject   | The Google Cloud Project ID of the table to bill for the export. (Optional. Defaults to the project of the Service Account being used)  |
-| project | The Google Cloud Project ID of the table. (Optional. Defaults to the project of the Service Account being used)                  |
-| dataset      |  The dataset containing the table. (Optional unless omitted in table)          |
+| parentProject   | The Google Cloud resource hierarchy resembles the file system which manages entities hierarchically . The Google Cloud Project ID of the table.  |
+| project | The Google Cloud Project ID of the table. A project organizes all your Google Cloud resources .For example, all of your Cloud Storage buckets and objects, along with user permissions for accessing them, reside in a project.                |
+| dataset      |  A dataset is contained within a specific project. Datasets are top-level containers that are used to organize and control access to your tables and views        |
 
 
 #### Example
@@ -55,12 +55,12 @@ df.show(false)
 
 | Parameters | Description             |
 |------------|-------------------------|
-| table          | The BigQuery table in the format [[project:]dataset.]table       |
-| options    |  Description(Value)|
+| table          | The BigQuery table which is present in a dataset in the format [[project:]dataset.]table       |
+| options    |  Description |
 |-------------| -------------|
-| parentProject   | The Google Cloud Project ID of the table to bill for the export. (Optional. Defaults to the project of the Service Account being used)  |
-| project | The Google Cloud Project ID of the table. (Optional. Defaults to the project of the Service Account being used)                  |
-| dataset      |  The dataset containing the table. (Optional unless omitted in table)          |
+| parentProject   | The Google Cloud resource hierarchy resembles the file system which manages entities hierarchically . The Google Cloud Project ID of the table.   |
+| project | The Google Cloud Project ID of the table. A project organizes all your Google Cloud resources .For example, all of your Cloud Storage buckets and objects, along with user permissions for accessing them, reside in a project.                 |
+| dataset      | A dataset is contained within a specific project. Datasets are top-level containers that are used to organize and control access to your tables and views          |
 | temporaryGcsBucket      |  The GCS bucket that temporarily holds the data before it is loaded to BigQuery. Required unless set in the Spark configuration (spark.conf.set(...)).          |
 
 #### Example
