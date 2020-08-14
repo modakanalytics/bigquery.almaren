@@ -38,7 +38,7 @@ import com.github.music.of.the.ainur.almaren.builder.Core.Implicit
 
 val almaren = Almaren("App Name")
 
-spark.conf.set("credentials","<json encoded in base64 string>")
+spark.conf.set("gcpAccessToken","token")
 
 val df =  almaren
          .builder
@@ -73,7 +73,7 @@ import org.apache.spark.sql.SaveMode
 
 val almaren = Almaren("App Name")
 
-spark.conf.set("credentials","<json encoded in base64 string>")
+spark.conf.set("gcpAccessToken","token")
 
 almaren.builder
     .sourceSql("""SELECT sha2(concat_ws("",array(*)),256) as id,*,current_timestamp from deputies""")
