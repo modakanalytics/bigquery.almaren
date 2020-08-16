@@ -6,7 +6,7 @@
 libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.1-2-4"
 ```
 
-BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector). The *BigQuery Connector* just works on BigQuery Cloud.
+BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 For all the options available for the connector check on this [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
 ```
