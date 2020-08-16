@@ -7,7 +7,7 @@ libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "
 ```
 
 BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
-For all the options available for the connector check on this [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
+For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
 ```
 spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.11:0.2.8-$SPARK_VERSION,com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.1-2-4"
