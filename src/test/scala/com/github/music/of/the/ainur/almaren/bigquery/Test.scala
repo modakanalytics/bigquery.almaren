@@ -1,47 +1,64 @@
 package com.github.music.of.the.ainur.almaren.bigquery
-
-import org.apache.spark.sql.SaveMode
+import org.apache.spark.sql.{AnalysisException, Column, DataFrame, SaveMode, SparkSession}
 import org.scalatest._
+import org.apache.spark.sql.functions._
 import com.github.music.of.the.ainur.almaren.Almaren
 import com.github.music.of.the.ainur.almaren.builder.Core.Implicit
 import com.github.music.of.the.ainur.almaren.bigquery.BigQuery.BigQueryImplicit
-
 class Test extends FunSuite with BeforeAndAfter {
-
-  val almaren = Almaren("App Test")
-
-  val spark = almaren.spark
+  val almaren = Almaren("bigQuery-almaren")
+  val spark: SparkSession = almaren.spark
     .master("local[*]")
-    .config("spark.ui.enabled","false")
+    .config("spark.ui.enabled", "false")
     .config("spark.sql.shuffle.partitions", "1")
     .getOrCreate()
-  
   spark.sparkContext.setLogLevel("ERROR")
+  val bigQueryDf: DataFrame = spark.read.parquet("src/test/resources/data/bigQueryTestTable.parquet")
 
-  import spark.implicits._
+  val gcpToken: String = sys.env.getOrElse("GCP_TOKEN", throw new Exception("GCP_TOKEN environment variable is not set"))
+  spark.conf.set("gcpAccessToken", gcpToken)
+  //creating config map
+  val configMap: Map[String, String] = Map("parentProject" -> "modak-nabu",
+    "project" -> "modak-nabu",
+    "dataset" -> "nabu_spark")
+  val df: DataFrame = almaren.builder
+    .sourceBigQuery("customer", configMap)
+    .batch
 
-  // Create twitter table with data
-  val jsonData = bootstrap
-
-
-  //write tests
-
-  test("number of records should match") {
-//    assert(inputCount == bigqueryDataCount)
+  test(bigQueryDf, df, "Read bigQuery Test")
+  def test(df1: DataFrame, df2: DataFrame, name: String): Unit = {
+    testCount(df1, df2, name)
+    testCompare(df1, df2, name)
   }
-
-  // Check if ids match
-  //val diff = jsonData.as("json").join(bigqueryData.as("bigquery"), $"json.id" <=> $"bigquery.id","leftanti").count()
-  test("match records") {
- //   assert(diff == 0)
+  def testCount(df1: DataFrame, df2: DataFrame, name: String): Unit = {
+    val count1 = df1.count()
+    val count2 = df2.count()
+    val count3 = spark.emptyDataFrame.count()
+    test(s"Count Test:$name should match") {
+      assert(count1 == count2)
+    }
+    test(s"Count Test:$name should not match") {
+      assert(count1 != count3)
+    }
   }
-
-  def bootstrap = {
-    val res = spark.read.json("src/test/resources/sample_data/twitter_search_data.json")
-    res.createTempView("twitter")
-    res
+  // Doesn't support nested type and we don't need it :)
+  def testCompare(df1: DataFrame, df2: DataFrame, name: String): Unit = {
+    val diff = compare(df1, df2)
+    test(s"Compare Test:$name should be zero") {
+      assert(diff == 0)
+    }
+    test(s"Compare Test:$name, should not be able to join") {
+      assertThrows[AnalysisException] {
+        compare(df2, spark.emptyDataFrame)
+      }
+    }
   }
-
+  private def compare(df1: DataFrame, df2: DataFrame): Long =
+    df1.as("df1").join(df2.as("df2"), joinExpression(df1), "leftanti").count()
+  private def joinExpression(df1: DataFrame): Column =
+    df1.schema.fields
+      .map(field => col(s"df1.${field.name}") <=> col(s"df2.${field.name}"))
+      .reduce((col1, col2) => col1.and(col2))
   after {
     spark.stop
   }
