@@ -10,7 +10,9 @@ BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc
 For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
 ```
+
 spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.11:0.9.2-2.4,com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.3-2.4"
+
 ```
 
 ## Source and Target
