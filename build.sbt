@@ -14,7 +14,7 @@ scalacOptions ++= Seq("-deprecation", "-feature")
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
-  "com.github.music-of-the-ainur" %% "almaren-framework" % "0.9.2-2.4.0" % "provided",
+  "com.github.music-of-the-ainur" %% "almaren-framework" % "2.4.5-2.4.5" % "provided",
   "com.google.cloud.spark" %% "spark-bigquery-with-dependencies" % "0.23.2",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.0",
   "org.scalatest" %% "scalatest" % "3.0.5" % "test"
@@ -59,3 +59,4 @@ ThisBuild / publishTo := {
 
 ThisBuild / publishMavenStyle := true
 updateOptions := updateOptions.value.withGigahorse(false)
+
