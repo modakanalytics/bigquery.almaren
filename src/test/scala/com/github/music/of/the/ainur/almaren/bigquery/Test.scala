@@ -17,12 +17,23 @@ class Test extends FunSuite with BeforeAndAfter {
 
   val gcpToken: String = sys.env.getOrElse("GCP_TOKEN", throw new Exception("GCP_TOKEN environment variable is not set"))
   spark.conf.set("gcpAccessToken", gcpToken)
+  spark.conf.set("viewsEnabled","true")
+  spark.conf.set("materializationDataset","nabu_spark")
   //creating config map
+
   val configMap: Map[String, String] = Map("parentProject" -> "modak-nabu",
     "project" -> "modak-nabu",
     "dataset" -> "nabu_spark")
   val df: DataFrame = almaren.builder
     .sourceBigQuery("customer", configMap)
+    .batch
+
+  df.show()
+
+  val configMap1: Map[String, String] = Map("parentProject" -> "modak-nabu",
+    "project" -> "modak-nabu")
+  val df1: DataFrame = almaren.builder
+    .sourceBigQuery("SELECT * FROM `nabu_spark.customer` ", configMap1)
     .batch
 
   test(bigQueryDf, df, "Read bigQuery Test")

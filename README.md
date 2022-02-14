@@ -10,7 +10,9 @@ BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc
 For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
 ```
-spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.11:0.3.0-2.4,com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.3-2.4"
+
+spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.11:0.9.2-2.4,com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.3-2.4"
+
 ```
 
 ## Source and Target
@@ -26,9 +28,10 @@ spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almare
 | parentProject   | The Google Cloud resource hierarchy resembles the file system which manages entities hierarchically . The Google Cloud Project ID of the table.  |
 | project | The Google Cloud Project ID of the table. A project organizes all your Google Cloud resources .For example, all of your Cloud Storage buckets and objects, along with user permissions for accessing them, reside in a project.                |
 | dataset      |  A dataset is contained within a specific project. Datasets are top-level containers that are used to organize and control access to your tables and views        |
+|query      |  Standard SQL SELECT query. (Table name should be in grave accent)  |
 
 
-#### Example
+#### Example 1
 
 
 ```scala
@@ -48,6 +51,31 @@ val df =  almaren
 df.show(false)
 ```
 
+
+You can run any Standard SQL SELECT query on BigQuery and fetch its results directly to a Spark Dataframe.        
+In order to use this feature the following configurations MUST be set:
+* `viewsEnabled` must be set to `true`.
+* `materializationDataset` must be set to a dataset where the GCP user has table
+  creation permission.
+### Example 2
+```scala
+import com.github.music.of.the.ainur.almaren.Almaren
+import com.github.music.of.the.ainur.almaren.bigquery.BigQuery.BigQueryImplicit
+import com.github.music.of.the.ainur.almaren.builder.Core.Implicit
+
+val almaren = Almaren("App Name")
+
+spark.conf.set("gcpAccessToken","token")
+spark.conf.set("viewsEnabled","true")
+spark.conf.set("materializationDataset","<dataset>")
+
+val df =  almaren
+         .builder
+         .sourceBigQuery("query",Map("parentProject"->"project_name","project"->"project_name"))
+         .batch
+
+df.show(false)
+```
 
 
 ### Target:
@@ -81,4 +109,5 @@ almaren.builder
     .targetBigQuery("dataset.table",Map("parentProject"->"project_name","project"->"project_name","temporaryGcsBucket"->"bucket"),SaveMode.Overwrite)
     .batch
 ```
+
 
