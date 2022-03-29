@@ -3,7 +3,13 @@
 [![Build Status](https://travis-ci.com/modakanalytics/bigquery.almaren.svg?branch=master)](https://travis-ci.com/modakanalytics/bigquery.almaren)
 
 ```
-libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.4-2.4"
+libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.5-3.1"
+```
+
+To run in spark-shell:
+
+```
+spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.5-$SPARK_VERSION,com.github.music-of-the-ainur:almaren-framework_2.12:0.9.3-$SPARK_VERSION"
 ```
 
 BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
@@ -11,7 +17,7 @@ For more details check the following [link](https://github.com/GoogleCloudDatapr
 
 ```
 
-spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.11:0.9.2-2.4,com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.4-2.4"
+spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.3-3.1,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.5-3.1"
 
 ```
 
