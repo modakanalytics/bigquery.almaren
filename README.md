@@ -14,9 +14,7 @@ libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "
 To run in spark-shell:
 
 ```
-
 spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.11:0.9.8-$SPARK_VERSION,com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.6-$SPARK_VERSION"
-
 ```
 
 ## Source and Target
