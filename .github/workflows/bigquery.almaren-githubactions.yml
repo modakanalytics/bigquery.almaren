@@ -4,6 +4,8 @@ on: [push, pull_request]
 jobs:
   Build:
     runs-on: ubuntu-20.04
+    env:
+      GCP_TOKEN: ${{secrets.GCP_TOKEN}}
     services:
       postgres:
         image: postgres:13.4
