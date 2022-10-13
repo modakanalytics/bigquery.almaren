@@ -4,6 +4,8 @@ on: [push, pull_request]
 jobs:
   Build:
     runs-on: ubuntu-20.04
+    env:
+      GCP_TOKEN: ${{secrets.GCP_TOKEN}}
     services:
       postgres:
         image: postgres:13.4
@@ -27,8 +29,6 @@ jobs:
           java-version: 8
           cache: sbt
       - name: Build and test scala version
-        env:
-          GCP_TOKEN: ya29.a0Aa4xrXM3a-D7x2gZhgRO9-raEAQDo-bJy9dDXXvA0e_mtE_mMteEn_bvmRgHcA4ub9ge14nw1_ubV75lf573AH3Ffke_sgY_MqIBrHLukiNe9FQJHP47FdNLrNew0kvjzAP7uYHGTXruO3yzEZdyG0GvcWkAQ8-6OlTg2IrGOZMTBY-cN66gNd2-LJz13WzQWVYq1GieSdy4wqRSP2FET5576_j0IMRhlM5oxDdL3ygxkybPvsvTCYsb767rZnSlIYZvCgaCgYKATASARMSFQEjDvL9p56iFoMs7fTNw9s_tVMI1w0269
         run: |
           PGPASSWORD="postgres" psql -c 'create database almaren;' -U postgres -h localhost 
           PGPASSWORD="postgres" psql -c "ALTER USER postgres PASSWORD 'foo' ;" -U postgres -h localhost 
