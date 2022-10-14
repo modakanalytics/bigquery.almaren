@@ -1,25 +1,48 @@
 # BigQuery Connector
 
-[![Build Status](https://travis-ci.com/modakanalytics/bigquery.almaren.svg?branch=master)](https://travis-ci.com/modakanalytics/bigquery.almaren)
+[![Build Status](https://github.com/modakanalytics/bigquery.almaren/actions/workflows/bigquery.almaren-githubactions.yml/badge.svg)](https://github.com/modakanalytics/bigquery.almaren/actions/workflows/bigquery.almaren-githubactions.yml)
+
+To add Bigquery  dependency to your sbt build:
 
 ```
-libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.6-$SPARK_VERSION"
+libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.7-3.3"
 ```
 
 To run in spark-shell:
 
+For scala version(2.12):
+
 ```
-spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.6-$SPARK_VERSION,com.github.music-of-the-ainur:almaren-framework_2.12:0.9.3-$SPARK_VERSION"
+spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3,com.github.music-of-the-ainur:almaren-framework_2.12:0.9.8-3.3"
+```
+
+For scala version(2.13):
+
+```
+spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.7-3.3,com.github.music-of-the-ainur:almaren-framework_2.13:0.9.8-3.3"
 ```
 
 BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
 ```
-
-spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.3-3.1,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.5-3.1"
-
+spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.8-3.3,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3"
 ```
+
+#### Maven / Ivy Package Usage
+The connector is also available from the
+[Maven Central](https://mvnrepository.com/artifact/com.github.music-of-the-ainur)
+repository. It can be used using the `--packages` option or the
+`spark.jars.packages` configuration property. Use the following value
+
+| version                    | Connector Artifact                                              |
+|----------------------------|-----------------------------------------------------------------|
+| Spark 3.3.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.7-3.3` |
+| Spark 3.3.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3` |
+| Spark 3.2.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.2` |
+| Spark 3.1.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.1` |
+| Spark 2.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-2.4` |
+| Spark 2.4.x and scala 2.11 | `com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.7-2.4` |
 
 ## Source and Target
 
