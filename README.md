@@ -1,6 +1,6 @@
 # BigQuery Connector
 
-[![Build Status](https://travis-ci.com/modakanalytics/bigquery.almaren.svg?branch=master)](https://travis-ci.com/modakanalytics/bigquery.almaren)
+[![Build Status](https://github.com/modakanalytics/bigquery.almaren/actions/workflows/bigquery-almaren-githubactions.yml/badge.svg)](https://github.com/modakanalytics/bigquery.almaren/actions/workflows/bigquery-almaren-githubactions.yml)
 
 BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
