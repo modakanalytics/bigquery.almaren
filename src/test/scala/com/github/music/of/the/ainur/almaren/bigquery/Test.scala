@@ -5,7 +5,8 @@ import org.apache.spark.sql.functions._
 import com.github.music.of.the.ainur.almaren.Almaren
 import com.github.music.of.the.ainur.almaren.builder.Core.Implicit
 import com.github.music.of.the.ainur.almaren.bigquery.BigQuery.BigQueryImplicit
-class Test extends FunSuite with BeforeAndAfter {
+import org.scalatest.funsuite.AnyFunSuite
+class Test extends AnyFunSuite with BeforeAndAfter {
   val almaren = Almaren("bigQuery-almaren")
   val spark: SparkSession = almaren.spark
     .master("local[*]")
