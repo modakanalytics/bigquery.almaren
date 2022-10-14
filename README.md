@@ -5,7 +5,7 @@
 BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
-Adding BigQuery Connector dependency to your sbt build:
+To add Bigquery Almaren dependency to your sbt build:
 
 ```
 libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.7-3.1"
