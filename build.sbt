@@ -7,7 +7,7 @@ lazy val scala212 = "2.12.10"
 crossScalaVersions := Seq(scala211,scala212)
 ThisBuild / scalaVersion := scala212
 
-val sparkVersion = "2.4.5"
+val sparkVersion = "2.4.8"
 
 scalacOptions ++= Seq("-deprecation", "-feature")
 
