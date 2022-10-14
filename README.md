@@ -37,12 +37,12 @@ repository. It can be used using the `--packages` option or the
 
 | version                    | Connector Artifact                                              |
 |----------------------------|-----------------------------------------------------------------|
-| Spark 3.3.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3` |
+| Spark 3.3.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.7-3.3` |
 | Spark 3.3.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3` |
 | Spark 3.2.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.2` |
 | Spark 3.1.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.1` |
 | Spark 2.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-2.4` |
-| Spark 2.4.x and scala 2.11 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-2.4` |
+| Spark 2.4.x and scala 2.11 | `com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.7-2.4` |
 
 ## Source and Target
 
