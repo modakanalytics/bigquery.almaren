@@ -8,24 +8,26 @@ For more details check the following [link](https://github.com/GoogleCloudDatapr
 To add Bigquery Almaren dependency to your sbt build:
 
 ```
-libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.7-3.1"
+libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.8-3.1"
 ```
 
 To run in spark-shell:
 
 ```
-spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.8-3.1,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.1"
+spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.10-3.1,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.1"
 ```
 BigQuery Connector is available in [Maven Central](https://mvnrepository.com/artifact/com.github.music-of-the-ainur) repository.
 
 | versions                   | Connector Artifact                                              |
 |----------------------------|-----------------------------------------------------------------|
-| Spark 3.3.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.7-3.3` |
-| Spark 3.3.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3` |
-| Spark 3.2.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.2` |
-| Spark 3.1.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.1` |
-| Spark 2.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-2.4` |
-| Spark 2.4.x and scala 2.11 | `com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.7-2.4` |
+| Spark 3.4.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.8-3.4` |
+| Spark 3.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.4` |
+| Spark 3.3.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.8-3.3` |
+| Spark 3.3.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.3` |
+| Spark 3.2.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.2` |
+| Spark 3.1.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.1` |
+| Spark 2.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-2.4` |
+| Spark 2.4.x and scala 2.11 | `com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.8-2.4` |
 
 ## Source and Target
 
