@@ -5,7 +5,7 @@
 To add Bigquery  dependency to your sbt build:
 
 ```
-libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.7-3.3"
+libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.8-3.3"
 ```
 
 To run in spark-shell:
@@ -13,20 +13,20 @@ To run in spark-shell:
 For scala version(2.12):
 
 ```
-spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3,com.github.music-of-the-ainur:almaren-framework_2.12:0.9.8-3.3"
+spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.3,com.github.music-of-the-ainur:almaren-framework_2.12:0.9.10-3.3"
 ```
 
 For scala version(2.13):
 
 ```
-spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.7-3.3,com.github.music-of-the-ainur:almaren-framework_2.13:0.9.8-3.3"
+spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.8-3.3,com.github.music-of-the-ainur:almaren-framework_2.13:0.9.10-3.3"
 ```
 
 BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
 ```
-spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.8-3.3,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3"
+spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.10-3.3,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.3"
 ```
 
 #### Maven / Ivy Package Usage
@@ -37,12 +37,14 @@ repository. It can be used using the `--packages` option or the
 
 | version                    | Connector Artifact                                              |
 |----------------------------|-----------------------------------------------------------------|
-| Spark 3.3.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.7-3.3` |
-| Spark 3.3.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.3` |
-| Spark 3.2.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.2` |
-| Spark 3.1.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-3.1` |
-| Spark 2.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.7-2.4` |
-| Spark 2.4.x and scala 2.11 | `com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.7-2.4` |
+| Spark 3.4.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.8-3.4` |
+| Spark 3.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.4` |
+| Spark 3.3.x and scala 2.13 | `com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.8-3.3` |
+| Spark 3.3.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.3` |
+| Spark 3.2.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.2` |
+| Spark 3.1.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.1` |
+| Spark 2.4.x and scala 2.12 | `com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-2.4` |
+| Spark 2.4.x and scala 2.11 | `com.github.music-of-the-ainur:bigquery-almaren_2.11:0.0.8-2.4` |
 
 ## Source and Target
 
