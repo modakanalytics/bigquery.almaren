@@ -5,7 +5,7 @@
 To add Bigquery  dependency to your sbt build:
 
 ```
-libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.8-3.3"
+libraryDependencies += "com.github.music-of-the-ainur" %% "bigquery-almaren" % "0.0.8-3.4"
 ```
 
 To run in spark-shell:
@@ -13,20 +13,20 @@ To run in spark-shell:
 For scala version(2.12):
 
 ```
-spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.3,com.github.music-of-the-ainur:almaren-framework_2.12:0.9.10-3.3"
+spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.4,com.github.music-of-the-ainur:almaren-framework_2.12:0.9.10-3.4"
 ```
 
 For scala version(2.13):
 
 ```
-spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.8-3.3,com.github.music-of-the-ainur:almaren-framework_2.13:0.9.10-3.3"
+spark-shell --packages "com.github.music-of-the-ainur:bigquery-almaren_2.13:0.0.8-3.4,com.github.music-of-the-ainur:almaren-framework_2.13:0.9.10-3.4"
 ```
 
 BigQuery Connector was implemented using [https://github.com/GoogleCloudDataproc/spark-bigquery-connector](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 For more details check the following [link](https://github.com/GoogleCloudDataproc/spark-bigquery-connector).
 
 ```
-spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.10-3.3,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.3"
+spark-shell --master "local[*]" --packages "com.github.music-of-the-ainur:almaren-framework_2.12:0.9.10-3.4,com.github.music-of-the-ainur:bigquery-almaren_2.12:0.0.8-3.4"
 ```
 
 #### Maven / Ivy Package Usage
