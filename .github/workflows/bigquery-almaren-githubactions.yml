@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       GCP_TOKEN: ${{secrets.GCP_TOKEN}}
-      GCP_CREDENTIALS: ${{secrets.GCP_CREDENTIALS}}
     services:
       postgres:
         image: postgres:13.4
