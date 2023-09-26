@@ -18,6 +18,7 @@ class Test extends AnyFunSuite with BeforeAndAfter {
   val bigQueryDf: DataFrame = spark.read.parquet("src/test/resources/data/bigQueryTestTable.parquet")
 
   val gcpToken: String = sys.env.getOrElse("GCP_TOKEN", throw new Exception("GCP_TOKEN environment variable is not set"))
+  
   spark.conf.set("gcpAccessToken", gcpToken)
   spark.conf.set("viewsEnabled","true")
   spark.conf.set("materializationDataset","nabu_spark")
